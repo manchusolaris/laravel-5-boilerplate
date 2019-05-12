@@ -2,7 +2,7 @@
   tasks:
     - name: install python
       yum:
-        name: phyton-docker
+        name: python-docker
         state: present
     - name: run docker container
       docker_container:
