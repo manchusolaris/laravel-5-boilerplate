@@ -1,0 +1,15 @@
+- hosts: centos
+  tasks:
+    - name: install python
+      yum:
+        name: phyton-docker
+        state: present
+    - name: run docker container
+      docker_container:
+        image: manchuoslaris/boilerplate
+        detach: yes
+        interactive: yes
+        tty: yes
+        name: test-ansible
+        state: present
+        exposed_ports: 8085
